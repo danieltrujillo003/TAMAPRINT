@@ -1,0 +1,4 @@
+- Hacer cuadro para editar, si campo id está vacío POST, si se selecciona PUT
+- encontrar manera de mostrar los artículos
+- Mostrar artículos creados y eliminados en tiempo real
+- poner en funcionamiento los clasificadores
