@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 
 // import "./style/sass/main.scss";
 import { rootReducer } from "./reducers";
-import Dropdown from "./components/dropdown";
+import ArticleForm from "./components/articleForm";
 import Table from "./components/table";
 
 const middleware = [thunk];
@@ -14,7 +14,10 @@ const initialState = {};
 const store = createStore(
   rootReducer,
   initialState,
-  compose(applyMiddleware(...middleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  compose(
+    applyMiddleware(...middleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
 class App extends Component {
@@ -89,26 +92,7 @@ class App extends Component {
         <h1>
           <a href="/">Artículos</a>
         </h1>
-        <form onSubmit={this.handleSubmit}>
-          Nombre:
-          <input
-            name="nombre"
-            type="text"
-            placeholder="escriba..."
-            onChange={this.handleChange}
-          />
-          <br />
-          <Dropdown />
-          Notas:
-          <input
-            name="notas"
-            type="text"
-            placeholder="escriba..."
-            onChange={this.handleChange}
-          />
-          <br />
-          <input type="submit" value="Crear artículo" />
-        </form>
+        <ArticleForm />
         <br />
         <br />
         <Table />

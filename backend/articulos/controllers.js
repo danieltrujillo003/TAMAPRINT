@@ -22,7 +22,6 @@ const getInfo = (req, res) => {
       client.end();
     } else {
       res.send({ info: result.rows });
-      console.log("hey");
       client.end();
     }
   });

@@ -5,7 +5,6 @@ const controllers = require("./controllers");
 
 module.exports.articulosRoutes = function articulosRoutes(app) {
   // general endpoints
-  app.get("/articuloss", (req, res) => res.send("hey"));
   app.get("/:table", controllers.getInfo);
   app.delete('/:table/:id', controllers.deleteInfo);
   app.post('/:table', controllers.addInfo);
